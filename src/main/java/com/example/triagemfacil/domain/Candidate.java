@@ -1,10 +1,7 @@
 package com.example.triagemfacil.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.*;
-import jakarta.persistence.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 @Getter
@@ -14,11 +11,13 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name = "candidates")
 public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Double age;
+    @Column(name = "time_experience")
     private String timeExperience;
 }
