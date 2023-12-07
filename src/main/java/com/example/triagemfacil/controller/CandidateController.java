@@ -1,11 +1,9 @@
 package com.example.triagemfacil.controller;
 
-import com.example.triagemfacil.domain.Candidate;
+import com.example.triagemfacil.domain.candidate.Candidate;
 import com.example.triagemfacil.dto.CandidateDTO;
-import com.example.triagemfacil.especifications.CandidateEspecifications;
 import com.example.triagemfacil.service.CandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

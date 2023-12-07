@@ -1,6 +1,6 @@
 package com.example.triagemfacil.especifications;
 
-import com.example.triagemfacil.domain.Candidate;
+import com.example.triagemfacil.domain.candidate.Candidate;
 import org.springframework.data.jpa.domain.Specification;
 
 public class CandidateEspecifications {

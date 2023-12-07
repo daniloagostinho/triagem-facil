@@ -1,4 +1,4 @@
-package com.example.triagemfacil.domain;
+package com.example.triagemfacil.domain.candidate;
 
 import jakarta.persistence.*;
 import lombok.*;

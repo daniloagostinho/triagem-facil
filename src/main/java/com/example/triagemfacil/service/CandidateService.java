@@ -1,6 +1,6 @@
 package com.example.triagemfacil.service;
 
-import com.example.triagemfacil.domain.Candidate;
+import com.example.triagemfacil.domain.candidate.Candidate;
 import com.example.triagemfacil.especifications.CandidateEspecifications;
 import com.example.triagemfacil.repository.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;

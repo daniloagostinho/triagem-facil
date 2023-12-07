@@ -1,6 +1,6 @@
 package com.example.triagemfacil.repository;
 
-import com.example.triagemfacil.domain.Candidate;
+import com.example.triagemfacil.domain.candidate.Candidate;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
