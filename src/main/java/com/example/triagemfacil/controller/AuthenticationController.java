@@ -14,15 +14,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("auth")
-
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -44,7 +41,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody RegisterDTO data) {
+    public ResponseEntity<RegisterDTO> register(@RequestBody RegisterDTO data) {
         if(this.userRepository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
         String encriptedPassword = new BCryptPasswordEncoder().encode(data.password());
         User newUser = new User(data.login(), encriptedPassword, data.role());

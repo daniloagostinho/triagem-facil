@@ -30,6 +30,12 @@ public class CandidateController {
         return ResponseEntity.ok(candidateDTOs);
     }
 
+    @GetMapping("/hi")
+    public String search() {
+        return "Ola mundo!";
+    }
+
+
     @PostMapping("/create")
     public ResponseEntity<CandidateDTO> addProduct(@RequestBody CandidateDTO candidateDTO) {
         Candidate candidate = new Candidate();
