@@ -29,6 +29,10 @@ public class CandidateService {
 
         return candidateRepo.findAll(spec);
     }
+
+    public List<Candidate> searchCandidates() {
+        return candidateRepo.findAll();
+    }
     public Candidate saveCandidate(Candidate candidate) {
         return candidateRepo.save(candidate);
     }
