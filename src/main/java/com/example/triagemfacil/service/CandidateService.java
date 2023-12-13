@@ -37,4 +37,7 @@ public class CandidateService {
         return candidateRepo.save(candidate);
     }
 
+    public Candidate findCandidateById(Long id) {
+        return candidateRepo.findById(id).orElse(null);
+    }
 }

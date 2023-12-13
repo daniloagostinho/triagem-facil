@@ -26,6 +26,16 @@ public class CandidateController {
         return ResponseEntity.ok(candidates);
     }
 
+    @GetMapping("/candidate")
+    public ResponseEntity<Candidate> searchById(@RequestParam Long id) {
+        Candidate candidate = candidateService.findCandidateById(id);
+        if (candidate != null) {
+            return ResponseEntity.ok(candidate);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/hi")
     public String search() {
         return "Ola mundo!";
