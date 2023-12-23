@@ -2,6 +2,7 @@ package com.example.triagemfacil.controller;
 
 import com.example.triagemfacil.domain.candidate.Candidate;
 import com.example.triagemfacil.dto.candidate.*;
+import com.example.triagemfacil.filters.FilterCandidate;
 import com.example.triagemfacil.service.CandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,11 @@ public class CandidateController {
         }
     }
 
+    @PostMapping("/filtrar")
+    public ResponseEntity<List<Candidate>> filtrarCandidatos(@RequestBody FilterCandidate filtro) {
+        List<Candidate> candidatosFiltrados = candidateService.filtrarCandidatos(filtro);
+        return ResponseEntity.ok(candidatosFiltrados);
+    }
     @GetMapping("/hi")
     public String search() {
         return "Ola mundo!";
